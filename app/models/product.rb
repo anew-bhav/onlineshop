@@ -5,6 +5,6 @@ class Product < ActiveRecord::Base
   validates :title, allow_blank: true, length: { minimum: 10 }
   validates :image_url, allow_blank: true, format: {
     with: %r{\.(gif|jpg|jpeg|png)\Z}i, # WHATIF :  URL doesnot link to picture but links to picture resource
-    message: 'must be a URL for image'
+    message: 'must be a URL with gif, jpg, jpeg or png extension'
   }
 end
