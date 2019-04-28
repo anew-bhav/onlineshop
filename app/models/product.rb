@@ -6,4 +6,9 @@ class Product < ActiveRecord::Base
     with: %r{\.(gif|jpg|jpeg|png)\Z}i, # WHATIF :  URL doesnot link to picture but links to picture resource
     message: 'must be a URL for image'
   }
+
+  def self.latest
+    Product.order(:updated_at).last
+  end
+
 end
